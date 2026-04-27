@@ -1,0 +1,304 @@
+<div style="background: #f5f5f5; min-height: 100vh; font-size: 14px;">
+  <nav style="background: #1a3a52; border-bottom: 3px solid #e87722; padding: 0 2rem; position: sticky; top: 0; z-index: 100;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 1rem 0;">
+      <div style="display: flex; align-items: center; gap: 8px; font-size: 18px; font-weight: 500;">
+        <div style="width: 36px; height: 36px; background: #e87722; border-radius: 4px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 500; font-size: 12px;">CC</div>
+        <span style="color: white; font-weight: 500;">CampusConnect</span>
+      </div>
+      <div style="display: flex; gap: 2rem; align-items: center;">
+        <button onclick="switchTab('home')" style="background: transparent; border: none; color: white; cursor: pointer; font-size: 14px; font-weight: 500;">Home</button>
+        <button onclick="switchTab('clubs')" style="background: transparent; border: none; color: #b8c5d6; cursor: pointer; font-size: 14px;">Clubs</button>
+        <button onclick="switchTab('events')" style="background: transparent; border: none; color: #b8c5d6; cursor: pointer; font-size: 14px;">Events</button>
+        <button onclick="switchTab('about')" style="background: transparent; border: none; color: #b8c5d6; cursor: pointer; font-size: 14px;">About</button>
+        <button onclick="sendPrompt('Download the CampusConnect app')" style="padding: 8px 16px; background: #e87722; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500;">Get app</button>
+      </div>
+    </div>
+  </nav>
+
+  <div id="home-tab" style="display: block;">
+    <div style="background: linear-gradient(135deg, #1a3a52 0%, #2d5a7b 100%); padding: 4rem 2rem; text-align: center; border-bottom: 4px solid #e87722;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h1 style="font-size: 36px; font-weight: 500; margin: 0 0 1rem; color: white;">All campus events, one app</h1>
+        <p style="font-size: 16px; color: #d0d8e0; margin: 0 0 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">Discover clubs, find events, and stay connected to your College of the Sequoias community. CampusConnect centralizes everything happening on campus.</p>
+        <div style="display: flex; gap: 12px; justify-content: center;">
+          <button onclick="sendPrompt('Tell me about the app features')" style="padding: 12px 24px; background: #e87722; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 500;">Learn more</button>
+          <button onclick="switchTab('clubs')" style="padding: 12px 24px; background: transparent; border: 2px solid white; color: white; border-radius: 4px; cursor: pointer; font-size: 14px; font-weight: 500;">Browse clubs</button>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 3rem 2rem; background: white;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 22px; font-weight: 500; margin: 0 0 2rem; color: #1a3a52;">Features</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px;">
+          <div style="background: #eef3f7; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+            <div style="font-size: 24px; margin-bottom: 12px;">📅</div>
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 8px; color: #1a3a52;">Unified event feed</h3>
+            <p style="font-size: 13px; color: #555; margin: 0; line-height: 1.6;">See all campus events, club activities, and sponsor promotions in one place.</p>
+          </div>
+          <div style="background: #eef3f7; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+            <div style="font-size: 24px; margin-bottom: 12px;">🎯</div>
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 8px; color: #1a3a52;">Club discovery</h3>
+            <p style="font-size: 13px; color: #555; margin: 0; line-height: 1.6;">Swipe through clubs to find communities that match your interests.</p>
+          </div>
+          <div style="background: #eef3f7; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+            <div style="font-size: 24px; margin-bottom: 12px;">📌</div>
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 8px; color: #1a3a52;">Personal calendar</h3>
+            <p style="font-size: 13px; color: #555; margin: 0; line-height: 1.6;">Pin events you care about and get reminders before they start.</p>
+          </div>
+          <div style="background: #eef3f7; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+            <div style="font-size: 24px; margin-bottom: 12px;">🔔</div>
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 8px; color: #1a3a52;">Smart notifications</h3>
+            <p style="font-size: 13px; color: #555; margin: 0; line-height: 1.6;">Get reminders 1 hour before events and optional daily digests.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="padding: 3rem 2rem; background: #eef3f7; border-top: 2px solid #4a7ba7;">
+      <div style="max-width: 1200px; margin: 0 auto;">
+        <h2 style="font-size: 22px; font-weight: 500; margin: 0 0 2rem; color: #1a3a52;">Latest events</h2>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px;">
+          <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.25rem;">
+            <div style="font-weight: 500; color: #1a3a52; margin-bottom: 4px;">Tech Talk: AI Workshop</div>
+            <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Computer Science Club</div>
+            <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px;">
+              <div style="margin-bottom: 4px;">📅 Wed, Mar 26 • 2:00 PM</div>
+              <div>📍 Science Building, Room 301</div>
+            </div>
+            <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Join us for an interactive workshop on AI fundamentals. Pizza and drinks provided!</p>
+          </div>
+          <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.25rem;">
+            <div style="font-weight: 500; color: #1a3a52; margin-bottom: 4px;">Spring Game Night</div>
+            <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Gaming & Board Game Club</div>
+            <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px;">
+              <div style="margin-bottom: 4px;">📅 Fri, Mar 28 • 6:00 PM</div>
+              <div>📍 Student Center, Game Lounge</div>
+            </div>
+            <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Come for board games, card games, and video gaming. All skill levels welcome!</p>
+          </div>
+          <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.25rem;">
+            <div style="font-weight: 500; color: #1a3a52; margin-bottom: 4px;">Campus Cleanup Volunteer</div>
+            <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Environmental Club</div>
+            <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px;">
+              <div style="margin-bottom: 4px;">📅 Sat, Mar 29 • 9:00 AM</div>
+              <div>📍 Campus Quad</div>
+            </div>
+            <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Help us keep campus beautiful. Supplies provided. No experience necessary.</p>
+          </div>
+        </div>
+        <div style="text-align: center; margin-top: 24px;">
+          <button onclick="switchTab('events')" style="padding: 10px 20px; background: transparent; border: 2px solid #1a3a52; color: #1a3a52; border-radius: 4px; cursor: pointer; font-size: 13px; font-weight: 500;">View all events →</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="clubs-tab" style="display: none; padding: 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h1 style="font-size: 28px; font-weight: 500; margin: 0 0 1rem; color: #1a3a52;">Browse clubs</h1>
+      <p style="font-size: 14px; color: #666; margin: 0 0 2rem;">Discover clubs and communities across campus</p>
+      
+      <div style="margin-bottom: 2rem;">
+        <input type="text" placeholder="Search clubs..." style="width: 100%; max-width: 400px; padding: 10px 12px; border: 2px solid #4a7ba7; border-radius: 4px; font-size: 14px;" />
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px;">
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🎨</div>
+          <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 4px; color: #1a3a52;">Design Club</h3>
+          <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Creative</span>
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Arts</span>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0 0 12px; line-height: 1.5;">Graphic design, UI/UX, and digital creative projects.</p>
+          <button onclick="sendPrompt('Tell me more about Design Club')" style="width: 100%; padding: 8px 12px; background: transparent; border: 2px solid #4a7ba7; border-radius: 4px; color: #1a3a52; cursor: pointer; font-size: 13px; font-weight: 500;">View club</button>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🌿</div>
+          <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 4px; color: #1a3a52;">Environmental Club</h3>
+          <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Sustainability</span>
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Volunteer</span>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0 0 12px; line-height: 1.5;">Cleanups, tree planting, and sustainability initiatives.</p>
+          <button onclick="sendPrompt('Tell me more about Environmental Club')" style="width: 100%; padding: 8px 12px; background: transparent; border: 2px solid #4a7ba7; border-radius: 4px; color: #1a3a52; cursor: pointer; font-size: 13px; font-weight: 500;">View club</button>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🏀</div>
+          <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 4px; color: #1a3a52;">Sports & Rec</h3>
+          <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Sports</span>
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Fitness</span>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0 0 12px; line-height: 1.5;">Intramural sports, outdoor activities, and recreation.</p>
+          <button onclick="sendPrompt('Tell me more about Sports & Rec')" style="width: 100%; padding: 8px 12px; background: transparent; border: 2px solid #4a7ba7; border-radius: 4px; color: #1a3a52; cursor: pointer; font-size: 13px; font-weight: 500;">View club</button>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🎵</div>
+          <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 4px; color: #1a3a52;">Music Club</h3>
+          <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Music</span>
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Performance</span>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0 0 12px; line-height: 1.5;">Jam sessions, concerts, and musical events.</p>
+          <button onclick="sendPrompt('Tell me more about Music Club')" style="width: 100%; padding: 8px 12px; background: transparent; border: 2px solid #4a7ba7; border-radius: 4px; color: #1a3a52; cursor: pointer; font-size: 13px; font-weight: 500;">View club</button>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 12px;">💻</div>
+          <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 4px; color: #1a3a52;">Coding Club</h3>
+          <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Tech</span>
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">STEM</span>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0 0 12px; line-height: 1.5;">Learn programming and build cool projects together.</p>
+          <button onclick="sendPrompt('Tell me more about Coding Club')" style="width: 100%; padding: 8px 12px; background: transparent; border: 2px solid #4a7ba7; border-radius: 4px; color: #1a3a52; cursor: pointer; font-size: 13px; font-weight: 500;">View club</button>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="font-size: 28px; margin-bottom: 12px;">🍕</div>
+          <h3 style="font-size: 15px; font-weight: 500; margin: 0 0 4px; color: #1a3a52;">Food & Culture</h3>
+          <div style="display: flex; gap: 4px; margin-bottom: 12px; flex-wrap: wrap;">
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Cultural</span>
+            <span style="background: #e87722; color: white; font-size: 11px; padding: 3px 8px; border-radius: 4px;">Social</span>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0 0 12px; line-height: 1.5;">Diverse cuisines, cooking demos, and cultural exchange.</p>
+          <button onclick="sendPrompt('Tell me more about Food & Culture')" style="width: 100%; padding: 8px 12px; background: transparent; border: 2px solid #4a7ba7; border-radius: 4px; color: #1a3a52; cursor: pointer; font-size: 13px; font-weight: 500;">View club</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="events-tab" style="display: none; padding: 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+      <h1 style="font-size: 28px; font-weight: 500; margin: 0 0 1rem; color: #1a3a52;">All campus events</h1>
+      <p style="font-size: 14px; color: #666; margin: 0 0 2rem;">Find everything happening on campus this week</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 16px;">
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0; color: #1a3a52;">Tech Talk: AI Workshop</h3>
+            <button style="background: transparent; border: none; font-size: 16px; cursor: pointer;">📌</button>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Computer Science Club</div>
+          <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">📅 Wed, Mar 26 • 2:00 PM</div>
+            <div>📍 Science Building, Room 301</div>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Join us for an interactive workshop on AI fundamentals. Pizza and drinks provided!</p>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0; color: #1a3a52;">Spring Game Night</h3>
+            <button style="background: transparent; border: none; font-size: 16px; cursor: pointer;">📌</button>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Gaming & Board Game Club</div>
+          <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">📅 Fri, Mar 28 • 6:00 PM</div>
+            <div>📍 Student Center, Game Lounge</div>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Come for board games, card games, and video gaming. All skill levels welcome!</p>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0; color: #1a3a52;">Campus Cleanup Volunteer</h3>
+            <button style="background: transparent; border: none; font-size: 16px; cursor: pointer;">📌</button>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Environmental Club</div>
+          <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">📅 Sat, Mar 29 • 9:00 AM</div>
+            <div>📍 Campus Quad</div>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Help us keep campus beautiful. Supplies provided. No experience necessary.</p>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0; color: #1a3a52;">Intramural Soccer Championship</h3>
+            <button style="background: transparent; border: none; font-size: 16px; cursor: pointer;">📌</button>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Sports & Rec</div>
+          <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">📅 Sun, Mar 31 • 10:00 AM</div>
+            <div>📍 Recreation Center</div>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Competitive soccer tournament. Sign up as a team or individual player.</p>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0; color: #1a3a52;">Group Hiking Trip</h3>
+            <button style="background: transparent; border: none; font-size: 16px; cursor: pointer;">📌</button>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Sports & Rec</div>
+          <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">📅 Sat, Apr 5 • 8:00 AM</div>
+            <div>📍 Mountain Ridge Trail</div>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Moderate hiking trail. All fitness levels welcome. Bring water.</p>
+        </div>
+
+        <div style="background: white; border: 2px solid #4a7ba7; border-radius: 8px; padding: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px;">
+            <h3 style="font-size: 15px; font-weight: 500; margin: 0; color: #1a3a52;">Film Festival Opening</h3>
+            <button style="background: transparent; border: none; font-size: 16px; cursor: pointer;">📌</button>
+          </div>
+          <div style="font-size: 12px; color: #666; margin-bottom: 8px;">Film & Media Club</div>
+          <div style="font-size: 13px; color: #1a3a52; margin-bottom: 12px; line-height: 1.5;">
+            <div style="margin-bottom: 4px;">📅 Tue, Apr 1 • 7:00 PM</div>
+            <div>📍 Media Center Theater</div>
+          </div>
+          <p style="font-size: 12px; color: #666; margin: 0; line-height: 1.5;">Student film festival showcase. Free popcorn and snacks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="about-tab" style="display: none; padding: 3rem 2rem;">
+    <div style="max-width: 800px; margin: 0 auto;">
+      <h1 style="font-size: 28px; font-weight: 500; margin: 0 0 1.5rem; color: #1a3a52;">About CampusConnect</h1>
+      <p style="font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 1.5rem;">CampusConnect is a free mobile app built by students for students at College of the Sequoias. We created it to solve a real problem: there's no single place to find out what's happening on campus.</p>
+      
+      <h2 style="font-size: 18px; font-weight: 500; margin: 2rem 0 1rem; color: #1a3a52;">Our mission</h2>
+      <p style="font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 1.5rem;">We're building tools that connect COS students to their campus community. By centralizing events, clubs, and campus activities, we help everyone discover communities that matter to them.</p>
+
+      <h2 style="font-size: 18px; font-weight: 500; margin: 2rem 0 1rem; color: #1a3a52;">What's coming next</h2>
+      <ul style="font-size: 14px; color: #666; line-height: 1.8; margin: 0; padding-left: 1.5rem;">
+        <li style="margin-bottom: 0.5rem;">User accounts to save your clubs and events across devices</li>
+        <li style="margin-bottom: 0.5rem;">Follow clubs to get updates from communities you care about</li>
+        <li style="margin-bottom: 0.5rem;">Direct messaging with club organizers</li>
+        <li style="margin-bottom: 0.5rem;">QR code check-in for events</li>
+        <li>Integration with COS calendar and facilities</li>
+      </ul>
+
+      <h2 style="font-size: 18px; font-weight: 500; margin: 2rem 0 1rem; color: #1a3a52;">Built by the CS Club</h2>
+      <p style="font-size: 14px; color: #666; line-height: 1.8; margin-bottom: 1.5rem;">CampusConnect is built and maintained by students in the College of the Sequoias Computer Science Club as a portfolio project. We're learning modern mobile development with React Native, Expo, and Supabase.</p>
+    </div>
+  </div>
+
+  <footer style="background: #1a3a52; border-top: 3px solid #e87722; padding: 2rem; margin-top: 3rem;">
+    <div style="max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; font-size: 12px; color: #b8c5d6;">
+      <div>CampusConnect MVP • Built by CS Club • 2026</div>
+      <div style="display: flex; gap: 1.5rem;">
+        <button onclick="sendPrompt('How can I get involved with CampusConnect?')" style="background: transparent; border: none; color: #e87722; cursor: pointer; font-size: 12px; font-weight: 500;">Get involved</button>
+        <button onclick="sendPrompt('Report an issue with CampusConnect')" style="background: transparent; border: none; color: #e87722; cursor: pointer; font-size: 12px; font-weight: 500;">Report issue</button>
+        <button onclick="sendPrompt('Contact the CampusConnect team')" style="background: transparent; border: none; color: #e87722; cursor: pointer; font-size: 12px; font-weight: 500;">Contact</button>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<script>
+function switchTab(tab) {
+  document.getElementById('home-tab').style.display = tab === 'home' ? 'block' : 'none';
+  document.getElementById('clubs-tab').style.display = tab === 'clubs' ? 'block' : 'none';
+  document.getElementById('events-tab').style.display = tab === 'events' ? 'block' : 'none';
+  document.getElementById('about-tab').style.display = tab === 'about' ? 'block' : 'none';
+}
+</script>

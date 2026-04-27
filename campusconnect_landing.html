@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CampusConnect - Discover Campus Life</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      color: var(--color-text-primary);
+      background: var(--color-background-primary);
+      line-height: 1.6;
+    }
+    
+    .hero {
+      background: linear-gradient(135deg, var(--color-background-secondary) 0%, var(--color-background-primary) 100%);
+      padding: 3.5rem 1.5rem 2rem;
+      border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+    
+    .hero h1 {
+      font-size: 32px;
+      font-weight: 500;
+      margin-bottom: 0.75rem;
+      max-width: 600px;
+    }
+    
+    .hero p {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      max-width: 550px;
+      margin-bottom: 2rem;
+    }
+    
+    .cta-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 500;
+      border-radius: var(--border-radius-md);
+      cursor: pointer;
+      transition: all 0.2s;
+      border: 0.5px solid var(--color-border-secondary);
+      background: transparent;
+      color: var(--color-text-primary);
+    }
+    
+    .btn:hover {
+      background: var(--color-background-secondary);
+      border-color: var(--color-border-secondary);
+    }
+    
+    .btn-primary {
+      background: var(--color-background-info);
+      color: var(--color-text-info);
+      border-color: transparent;
+    }
+    
+    .btn-primary:hover {
+      background: var(--color-background-info);
+      opacity: 0.9;
+    }
+    
+    .features-section {
+      padding: 3rem 1.5rem;
+      max-width: 680px;
+    }
+    
+    .section-title {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 1.5rem;
+      color: var(--color-text-primary);
+    }
+    
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 16px;
+      margin-bottom: 3rem;
+    }
+    
+    .feature-card {
+      background: var(--color-background-primary);
+      border: 0.5px solid var(--color-border-tertiary);
+      border-radius: var(--border-radius-lg);
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+    
+    .feature-card:hover {
+      border-color: var(--color-border-secondary);
+      background: var(--color-background-secondary);
+    }
+    
+    .feature-icon {
+      width: 32px;
+      height: 32px;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: var(--border-radius-md);
+      background: var(--color-background-info);
+      color: var(--color-text-info);
+      font-size: 18px;
+    }
+    
+    .feature-card h3 {
+      font-size: 15px;
+      font-weight: 500;
+      margin-bottom: 8px;
+      color: var(--color-text-primary);
+    }
+    
+    .feature-card p {
+      font-size: 13px;
+      color: var(--color-text-secondary);
+      line-height: 1.5;
+    }
+    
+    .mockup-section {
+      padding: 3rem 1.5rem;
+      background: var(--color-background-secondary);
+      border-top: 0.5px solid var(--color-border-tertiary);
+      border-bottom: 0.5px solid var(--color-border-tertiary);
+    }
+    
+    .mockup-content {
+      max-width: 680px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    
+    .mockup-text h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+    }
+    
+    .mockup-text p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      margin-bottom: 1rem;
+      line-height: 1.7;
+    }
+    
+    .feature-list {
+      list-style: none;
+    }
+    
+    .feature-list li {
+      font-size: 14px;
+      color: var(--color-text-primary);
+      margin-bottom: 10px;
+      padding-left: 24px;
+      position: relative;
+    }
+    
+    .feature-list li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: var(--color-text-info);
+      font-weight: 500;
+    }
+    
+    .phone-mockup {
+      width: 160px;
+      height: 320px;
+      background: linear-gradient(135deg, #f0f0f0, #e8e8e8);
+      border-radius: 24px;
+      padding: 8px;
+      box-shadow: 0 0 0 1px var(--color-border-tertiary);
+      margin: 0 auto;
+    }
+    
+    .phone-inner {
+      width: 100%;
+      height: 100%;
+      background: var(--color-background-primary);
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .phone-header {
+      background: var(--color-background-info);
+      color: var(--color-text-info);
+      padding: 12px 8px;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 500;
+    }
+    
+    .phone-content {
+      flex: 1;
+      padding: 12px 8px;
+      font-size: 9px;
+      color: var(--color-text-secondary);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      overflow: hidden;
+    }
+    
+    .phone-item {
+      background: var(--color-background-secondary);
+      padding: 8px;
+      border-radius: 6px;
+      border: 0.5px solid var(--color-border-tertiary);
+    }
+    
+    .cta-section {
+      padding: 3rem 1.5rem;
+      text-align: center;
+      background: var(--color-background-primary);
+    }
+    
+    .cta-section h2 {
+      font-size: 22px;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    
+    .cta-section p {
+      font-size: 14px;
+      color: var(--color-text-secondary);
+      max-width: 500px;
+      margin: 0 auto 1.5rem;
+    }
+    
+    .footer {
+      padding: 2rem 1.5rem;
+      border-top: 0.5px solid var(--color-border-tertiary);
+      text-align: center;
+      background: var(--color-background-secondary);
+    }
+    
+    .footer p {
+      font-size: 12px;
+      color: var(--color-text-secondary);
+    }
+    
+    @media (max-width: 680px) {
+      .hero h1 {
+        font-size: 26px;
+      }
+      
+      .hero {
+        padding: 2.5rem 1.5rem 1.5rem;
+      }
+      
+      .mockup-content {
+        grid-template-columns: 1fr;
+      }
+      
+      .phone-mockup {
+        width: 140px;
+        height: 280px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>All campus events, one app</h1>
+    <p>Discover clubs, find events, and stay connected to campus life. CampusConnect brings everything you need to know about your school community together in one place.</p>
+    <div class="cta-group">
+      <button class="btn btn-primary" onclick="sendPrompt('Tell me more about CampusConnect features')">Learn more</button>
+      <button class="btn" onclick="sendPrompt('How can I use CampusConnect?')">Get started</button>
+    </div>
+  </section>
+
+  <section class="features-section">
+    <h2 class="section-title">What you can do</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <h3>Unified calendar</h3>
+        <p>See all campus events and activities in one place. Pin your favorites.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎯</div>
+        <h3>Discover clubs</h3>
+        <p>Swipe through clubs and find your community. Mark what interests you.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📢</div>
+        <h3>Stay informed</h3>
+        <p>Get reminders for events you care about and daily digests.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏷️</div>
+        <h3>Sponsor offers</h3>
+        <p>Discover partner promotions and exclusive student offers.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="mockup-section">
+    <div class="mockup-content">
+      <div class="mockup-text">
+        <h2>Simple, mobile-first design</h2>
+        <p>Designed for student life on the go. Easy to navigate, fast to load.</p>
+        <ul class="feature-list">
+          <li>Browse events and clubs instantly</li>
+          <li>Pin events to your personal calendar</li>
+          <li>Swipe to discover new communities</li>
+          <li>No account needed to get started</li>
+        </ul>
+      </div>
+      <div class="phone-mockup">
+        <div class="phone-inner">
+          <div class="phone-header">CampusConnect</div>
+          <div class="phone-content">
+            <div class="phone-item">
+              <strong style="font-size: 10px;">Tech Talk</strong><br>Wed 2pm
+            </div>
+            <div class="phone-item">
+              <strong style="font-size: 10px;">Game Night</strong><br>Fri 6pm
+            </div>
+            <div class="phone-item">
+              <strong style="font-size: 10px;">Coding Club</strong><br>Mon 5pm
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-section">
+    <h2>Ready to connect with campus?</h2>
+    <p>Download CampusConnect and start discovering the events and clubs that match your interests.</p>
+    <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+      <button class="btn btn-primary" onclick="sendPrompt('How do I download CampusConnect?')">Download app</button>
+      <button class="btn" onclick="sendPrompt('What\'s coming next for CampusConnect?')">See roadmap</button>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>CampusConnect MVP • Built by CS Club Development Team • March 2026</p>
+  </footer>
+</body>
+</html>
